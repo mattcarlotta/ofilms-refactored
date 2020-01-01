@@ -3,10 +3,7 @@ module.exports = function(app) {
   app.use(
     "/api",
     proxy({
-      target:
-        process.env.NODE_ENV === "development"
-          ? "http://localhost:5000"
-          : "https://ofilms.herokuapp.com",
+      target: "http://localhost:5000",
       changeOrigin: true
     })
   );
