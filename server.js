@@ -11,7 +11,7 @@ app.get("/api/message", (req, res) => {
 });
 
 app.get("/api/hello", (req, res) => {
-  res.json({ message: "Hello world" });
+  res.json({ message: "Hello world !" });
 });
 
 app.listen(port, () => {
