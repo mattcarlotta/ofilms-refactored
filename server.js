@@ -1,10 +1,10 @@
 const path = require("path");
 const express = require("express");
 const app = express();
-const publicPath = path.join(__dirname, "..", "build");
 const port = 5000;
 
-app.use(express.static(publicPath));
+app.use(express.static("build"));
+app.get("*", (req, res) => res.sendFile(path.resolve("build", "index.html")));
 
 app.get("/api/message", (req, res) => {
   res.json({ message: "Test déploiement d'O'Films sur Heroku" });
@@ -12,10 +12,6 @@ app.get("/api/message", (req, res) => {
 
 app.get("/api/hello", (req, res) => {
   res.json({ message: "Hello world" });
-});
-
-app.get("*", (req, res) => {
-  res.sendFile(path.join(publicPath, "index.html"));
 });
 
 app.listen(port, () => {
