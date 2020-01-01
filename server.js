@@ -8,10 +8,11 @@ require("dotenv").config();
 console.log("test ", process.env.TEST);
 console.log("env ", process.env.NODE_ENV);
 
-if (process.env.NODE_ENV === "production") {
-  app.use(express.static("build"));
-  app.get("*", (req, res) => res.sendFile(path.resolve("build", "index.html")));
-}
+app.use(express.static(path.join(__dirname, "build")));
+
+app.get("/", (req, res) => {
+  res.sendFile(path.join(__dirname, "build", "index.html"));
+});
 
 app.get("/api/message", (req, res) => {
   res.json({ message: "Test déploiement d'O'Films sur Heroku" });
