@@ -7,6 +7,7 @@ function App() {
   const [message, setMessage] = useState("");
 
   useEffect(() => {
+    console.log("env ", process.env.NODE_ENV);
     fetch();
   }, []);
 
