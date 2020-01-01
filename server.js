@@ -15,5 +15,5 @@ app.get("/api/hello", (req, res) => {
 });
 
 app.listen(port, () => {
-  console.log("Server is up now !");
+  console.log(`Server is on up ${port} now !`);
 });
