@@ -1,6 +1,6 @@
 {
   "name": "test-deploy-heroku",
-  "homepage": "http://versifiction.github.io/ofilms-test-heroku",
+  "homepage": "https://versifiction.github.io/ofilms-test-heroku",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
