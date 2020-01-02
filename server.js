@@ -10,6 +10,8 @@ require("dotenv").config();
 console.log("test ", process.env.TEST);
 console.log("env ", process.env.NODE_ENV);
 
+app.use(morgan("tiny"));
+
 app.get("/api/message", (req, res) => {
   res.json({ message: "Test déploiement d'O'Films sur Heroku" });
 });
